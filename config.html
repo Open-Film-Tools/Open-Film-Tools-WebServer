@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open Film Tools IDT Profile Creation</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/dist/bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/modifications.css">
+
+    <script type="text/javascript" src="js/dist/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/dist/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/dist/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/js-helpers.js"></script>
+    <script type="text/javascript" src="js/basic-helpers.js"></script>
+    <script type="text/javascript" src="js/form-handling.js"></script>
+    <script type="text/javascript" src="js/cookies.js"></script>
+    <script type="text/javascript" src="js/config-main.js"></script>
+  </head>
+  <body>
+    <noscript>
+      This page heavilly depends on JavaScript. Please activate JavaScript and use a modern browser.
+    </noscript>
+
+<form role="form" class="form-signin">
+    <div id="main-container" class="container">
+
+      <div class="row" id="header">
+        <div class="col-md-12">
+          <div id="hdm-logo-container">
+            <img src="img/hdm_logo.gif" alt="Stuttgart Media University Logo">
+          </div>
+          <h2>Open Film Tools IDT Profile Creation</h2><br />
+          <h3>Detail Configuration</h3>
+        </div>
+      </div>
+
+      <div class="row" id="menu">
+        <div class="col-md-12">
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="menu-status"><a href="index.php">To Upload Form</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row submission-form-row">
+        <div class="col-md-4">
+          <h3>Processing information</h3>
+          <label for="cie_standard_observer">CIE Standard Observer</label> <input name="cie_standard_observer" type="text" class="form-control" value="CIE1931" required autofocus>
+        </div>
+        <div class="col-md-4">
+          <h3>General settings</h3>
+          <input name="dev_mode" type="checkbox" class="form-control"> <label for="dev_mode">Developer Mode</label>
+        </div>
+      </div>
+
+      <div class="row submission-form-row" style="margin-top:1em; margin-bottom: 2em;">
+        <div class="col-md-12" style="margin-top:1em;">
+          <p>
+            <input type="button" value="Save Configuration" onclick="saveDetailConfigCookie();">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="Reset all to default">
+          </p>
+        </div>
+
+    </div>
+
+</form>
+
+  </body>
+</html>

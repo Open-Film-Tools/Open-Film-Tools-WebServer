@@ -1,0 +1,3 @@
+Currently no additional steps are needed in the initial release.
+
+This file will be used to announce changes in the config files or additional steps needed when upgrading to a new version of the web frontend.

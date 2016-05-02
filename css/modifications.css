@@ -1,0 +1,219 @@
+body {
+  /*background-color: #ddd;*/
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(236, 236, 236));
+}
+
+#header {
+  border-bottom: 1px solid #ccc;
+}
+
+#menu {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1em;
+}
+
+#menu ul.nav li {
+  font-weight: bold;
+}
+#menu ul.nav li.active a {
+  background-color: #777;
+  color: #fff;
+}
+
+#footer {
+  border-top: 1px solid #ccc;
+  padding: 3px;
+  padding-top: 5px;
+  margin-bottom: 0;
+  margin-top: 1em;
+  text-align: center;
+}
+
+#main-container {
+  border: 1px solid #aaa;
+  border-radius: 2px;
+
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 3px #cacaca;
+
+  margin-top: 2em;
+  margin-bottom: 2em;
+  min-height: 40em;
+}
+
+.status-info-row {
+  display: none;
+}
+
+#hdm-logo-container {
+  float: right;
+  margin-top: 1em;
+}
+
+#overlay {
+  display: none;
+}
+
+#overlay.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0.9;
+  background-color: #999;
+  vertical-align:middle;
+
+}
+
+#overlay .infobox {
+  width: 50%;
+  min-height: 40%;
+  margin: auto;
+  margin-top: 15%;
+  opacity: 1;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #fff;
+  font-size: 1.15em;
+}
+
+#overlay progress {
+  width: 80%;
+}
+
+#overlay ul {
+  text-align: left;
+  margin-left: 10%;
+}
+
+#overlay .infobox-text {
+  padding-top: 1.5em;
+}
+
+
+input.form-control {
+  height: 24px;
+  padding–top: 4px;
+  padding-bottom: 4px;
+  line-height: 16px;
+  font-size: 13px;
+}
+
+select {
+  display: block;
+  width: 100%;
+  height: 24px;
+}
+#camera-settings-area {
+  height: 6em;
+}
+textarea {
+  /*display: block;*/
+  width: 100%;
+  padding: 5px;
+}
+
+input[type=file] {
+  height: 30px;
+}
+input[type=button] {
+  height: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  line-height: 16px;
+  font-size: 13px;
+}
+
+.file-upload {
+	position: relative;
+	overflow: hidden;
+	width: 10%;
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+.file-upload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.file-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.8em;
+}
+
+.file-container input.file-info-placeholder {
+  margin: 0;
+  width: 88%;
+}
+
+.invalid-field {
+  /*background-color: #ff5a5a;
+  font-weight: 600;*/
+  border: 3px solid red;
+}
+input.invalid-field {
+  height: 30px !important;
+}
+
+.form-error {
+  margin-top: 0.3em;
+  font-size: 1.1em;
+}
+
+
+#short-status-info-header {
+  display: none;
+}
+
+/* :SECTION: Status info */
+.status-row-with-guid {
+  font-size: 1.1em;
+  margin: 1.5em 0;
+}
+
+.status-row-with-guid .seperate {
+  margin-left: 1em;
+  border-left: 1px dotted #222;
+  padding-left: 1em;
+}
+
+.status-row-with-guid .main-info {
+  font-weight: bold;
+}
+
+.status-row-with-guid .main-info .guid {
+  border-left: 20px solid #888;
+  padding-left: 15px;
+}
+
+.log-messages p {
+  margin: 0.4em 0 0 0 ;
+  font-weight: 600;
+}
+
+.main-status p {
+  font-weight: 600;
+  margin: 0.2em 0 0 0;
+}
+
+.log-messages ul {
+  margin: 0.1em;
+}
+
+.dev-mode {
+  display: none;
+}
