@@ -72,6 +72,7 @@ function createXmlDoc() {
   xmlwriter.writeAttributeString('ProcessID', '2');
   xmlwriter.writeStartElement('In');
   xmlwriter.writeElementString('WhitePoint', getFileSelectableValue('white_point'));
+  xmlwriter.writeElementString('SceneIllumination', getFileSelectableValue('scene_illumination'));
   xmlwriter.writeElementString('ErrorMinimizationDomain', $("select[name='color_domain']").val());
   xmlwriter.writeElementString('PatchSet', getFileSelectableValue('patch_set'));
   xmlwriter.writeElementString('CIEStandardObserver', $("input[name='cie_standard_observer']").val());

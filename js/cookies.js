@@ -3,21 +3,22 @@
  */
 function writeFormInformationCookie() {
   var form_information = {
-      production:       $("input[name='production']").val(),
-      company:          $("input[name='company']").val(),
-      operator:         $("input[name='operator']").val(),
-      email:            $("input[name='email']").val(),
-      camera:           $("input[name='camera']").val(),
-      spectrometer:     $("input[name='spectrometer']").val(),
-      white_point:      $("select[name='white_point']").val(),
-      color_domain:     $("select[name='color_domain']").val(),
-      patch_set:        $("select[name='patch_set']").val(),
-      linearization:    $("select[name='linearization']").val(),
-      sensor_diagonal:  $("input[name='sensor_diagonal']").val(),
-      lens_stop:        $("input[name='lens_stop']").val(),
-      focal_length:     $("input[name='focal_length']").val(),
-      camera_settings:  $("input[name='camera_settings']").val(),
-      calibration_mode: $('input[name="calibration_mode"]:checked').val(),
+      production:             $("input[name='production']").val(),
+      company:                $("input[name='company']").val(),
+      operator:               $("input[name='operator']").val(),
+      email:                  $("input[name='email']").val(),
+      camera:                 $("input[name='camera']").val(),
+      spectrometer:           $("input[name='spectrometer']").val(),
+      white_point:            $("select[name='white_point']").val(),
+      scene_illumination:     $("select[name='scene_illumination']").val(),
+      color_domain:           $("select[name='color_domain']").val(),
+      patch_set:              $("select[name='patch_set']").val(),
+      linearization:          $("select[name='linearization']").val(),
+      sensor_diagonal:        $("input[name='sensor_diagonal']").val(),
+      lens_stop:              $("input[name='lens_stop']").val(),
+      focal_length:           $("input[name='focal_length']").val(),
+      camera_settings:        $("input[name='camera_settings']").val(),
+      calibration_mode:       $('input[name="calibration_mode"]:checked').val(),
     };
 
   var cookie_options = {
@@ -42,6 +43,7 @@ function readFormInformationCookie() {
     $("input[name='camera']").val(form_information['camera']);
     $("input[name='spectrometer']").val(form_information['spectrometer']);
     $("select[name='white_point']").val(form_information['white_point']);
+    $("select[name='scene_illumination']").val(form_information['scene_illumination']);
     $("select[name='color_domain']").val(form_information['color_domain']);
     $("select[name='patch_set']").val(form_information['patch_set']);
     $("select[name='linearization']").val(form_information['linearization']);

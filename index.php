@@ -85,7 +85,14 @@
               <option value="Gretag Macbeth Color Checker">Gretag Macbeth Color Checker</option>
               <option disabled class="dev-mode">──────────</option>
               <option value="FILE" class="dev-mode">Upload Patch Set File ...</option>
-            </select>
+            </select> <br>
+            <label for="scene_illumination">Scene Illumination</label> <select name="scene_illumination" class="file-selectable">
+              <option value="D65">D65</option>
+              <option value="D55">D55</option>
+              <option value="Tungsten">Tungsten</option>
+              <option disabled class="dev-mode">──────────</option>
+              <option value="FILE" class="dev-mode">Upload White Point File ...</option>
+            </select> <br>
 
             <input name="cie_standard_observer" type="hidden" class="form-control" value="CIE1931">
 
