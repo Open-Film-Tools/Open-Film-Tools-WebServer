@@ -29,7 +29,7 @@ foreach(scandir(UPLOAD_DIR) as $dir) {
     $zip = new ZipArchive();
 
     $idtfiles = glob("*.ctl");
-    if (file_exists(UPLOAD_DIR . '/' . $dir . '/' . $dir . '.status.xml')) {
+    if (file_exists(UPLOAD_DIR . '/' . $dir . '/' . $dir . '.status.xml') && count($idtfiles) > 0) {
         $finished = false;
         $status_xml = simplexml_load_file(UPLOAD_DIR . '/' . $dir . '/' . $dir . '.status.xml');
         foreach ($status_xml->ProgressLog->Out->Message as $message) {
