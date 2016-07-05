@@ -58,7 +58,7 @@ foreach(scandir(UPLOAD_DIR) as $dir) {
         sendDownloadNotificationMail($dir);
         echo "$dir zipped<br />";
 
-        if (defined("USE_CTLRENDER") && USE_CTLRENDER) {
+        if (defined("USE_CTLRENDER") && USE_CTLRENDER && count($idtfiles) > 0) {
             generateCTLpreview($dir, UPLOAD_DIR . '/' . $dir . '/' . $idtfiles[0]);
 
             break;
