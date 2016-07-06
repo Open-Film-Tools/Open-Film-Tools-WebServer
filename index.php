@@ -71,11 +71,14 @@
           <div class="col-md-4">
             <h3>Profile Optimization</h3>
             <label for="white_point">White Point</label> <select name="white_point" class="file-selectable">
-              <option value="D65">Daylight D65</option>
-              <option value="D60">Daylight D60</option>
+              <option value="D50">Daylight D50</option>
               <option value="D55">Daylight D55</option>
+              <option value="D60">Daylight D60</option>
+              <option value="D65">Daylight D65</option>
               <option value="D75">Daylight D75</option>
+              <option value="C">Daylight Illuminant C</option>
               <option value="A">Tungsten (Illuminant A)</option>
+              <option value="ISOTungsten">ISO Tungsten</option>
               <option value="2800">Tungsten 2800K</option>
               <option value="3000">Tungsten 3000K</option>
               <option value="3200">Tungsten 3200K</option>
@@ -93,11 +96,14 @@
               <option value="FILE" class="dev-mode">Upload Patch Set File ...</option>
             </select> <br>
             <label for="scene_illumination">Scene Illumination</label> <select name="scene_illumination" class="file-selectable">
-              <option value="D65">Daylight D65</option>
-              <option value="D60">Daylight D60</option>
+              <option value="D50">Daylight D50</option>
               <option value="D55">Daylight D55</option>
+              <option value="D60">Daylight D60</option>
+              <option value="D65">Daylight D65</option>
               <option value="D75">Daylight D75</option>
+              <option value="C">Daylight Illuminant C</option>
               <option value="A">Tungsten (Illuminant A)</option>
+              <option value="ISOTungsten">ISO Tungsten</option>
               <option value="2800">Tungsten 2800K</option>
               <option value="3000">Tungsten 3000K</option>
               <option value="3200">Tungsten 3200K</option>
@@ -174,11 +180,14 @@ post proc</textarea>
             <label for="checker_white_point">Shooting White Point</label> <select name="checker_white_point" class="file-selectable dev-mode">
               <option value="as_input">As Input</option>
               <option disabled>──────────</option>
-              <option value="D65">Daylight D65</option>
-              <option value="D60">Daylight D60</option>
+              <option value="D50">Daylight D50</option>
               <option value="D55">Daylight D55</option>
+              <option value="D60">Daylight D60</option>
+              <option value="D65">Daylight D65</option>
               <option value="D75">Daylight D75</option>
+              <option value="C">Daylight Illuminant C</option>
               <option value="A">Tungsten (Illuminant A)</option>
+              <option value="ISOTungsten">ISO Tungsten</option>
               <option value="2800">Tungsten 2800K</option>
               <option value="3000">Tungsten 3000K</option>
               <option value="3200">Tungsten 3200K</option>
