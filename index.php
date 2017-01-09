@@ -157,8 +157,9 @@ post proc</textarea>
           <div class="col-md-8">
             <p>
               <strong>Calibration Mode:</strong> &nbsp;&nbsp;
-              <input type="radio" name="calibration_mode" value="colorchecker" id="calibration_mode_checker" checked="checked"><label for="calibration_mode_checker">&nbsp;&nbsp;Color Checker</label> &nbsp;&nbsp;
-              <input type="radio" name="calibration_mode" value="spectral" id="calibration_mode_spectra" /><label for="calibration_mode_spectra">&nbsp;&nbsp;Spectral (experimental)</label>
+              <input type="radio" name="calibration_mode" value="colorchecker" id="calibration_mode_checker" checked="checked"><label for="calibration_mode_checker">&nbsp;&nbsp;Color Checker</label> &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="calibration_mode" value="spectral" id="calibration_mode_spectra" /><label for="calibration_mode_spectra">&nbsp;&nbsp;Spectral (experimental)</label> &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="calibration_mode" value="spec-input" id="calibration_mode_spectra_spec_input" /><label for="calibration_mode_spectra_spec_input">&nbsp;&nbsp;Spectral input (CSV)</label>
             </p>
           </div>
         </div>
@@ -196,8 +197,22 @@ post proc</textarea>
               <option value="FILE" class="dev-mode">Upload Shooting White Point File ...</option>
             </select> <br>
           </div>
-
           <div class="col-md-4 checker-mode">&nbsp;</div>
+
+          <div class="col-md-4 spec-input-mode">
+            <h3>Spectral input</h3>
+            <label for="spectrum-filename">Spectrum</label><br />
+            <div class="file-container">
+              <div class="file-upload">
+                <input type="button" value="...">
+                <input name="spectrum" type="file" class="upload" />
+              </div>
+              <input name="spectrum-filename" type="text" placeholder="Choose File" disabled="disabled" class="form-control file-info-placeholder" />
+            </div>
+
+            <p>Upload previously calculated spectrum file (cameraResponse.csv) and calculate an IDT based on it.</p>
+          </div>
+          <div class="col-md-4 spec-input-mode">&nbsp;</div>
 
           <div class="col-md-4 spectral-mode">
             <h3>Camera Images</h3>

@@ -5,7 +5,8 @@ var upload_files = {
     light_cal_spectrum: { filename: null, locked: false, content: null },
     light_cal_image:    { filename: null, locked: false, content: null },
     colorchecker_image: { filename: null, locked: false, content: null },
-    testimage:          { filename: null, locked: false, content: null }
+    testimage:          { filename: null, locked: false, content: null },
+    spectrum:           { filename: null, locked: false, content: null }
   };
 
 
@@ -148,7 +149,14 @@ function validateAllFiles() {
       }
       continue;
     }
-    if ( upload_files[key]['filename'] == null && $('input[name="calibration_mode"]:checked').val() != 'colorchecker' ) {
+    if ( key == 'spectrum' ) {
+      if ( $('input[name="calibration_mode"]:checked').val() == 'spec-input' && upload_files[key]['filename'] == null ) {
+        console.log(key + " expected but missed!");
+        return false;
+      }
+      continue;
+    }
+    if ( upload_files[key]['filename'] == null && $('input[name="calibration_mode"]:checked').val() != 'colorchecker' && $('input[name="calibration_mode"]:checked').val() != 'spec-input' ) {
       console.log(key + " failed!");
       return false;
     }
@@ -175,8 +183,14 @@ function changeCalibrationFieldMode(evt) {
   if ($('input[name="calibration_mode"]:checked').val() == 'colorchecker') {
     $('div.checker-mode').show();
     $('div.spectral-mode').hide();
+    $('div.spec-input-mode').hide();
+  } else if ($('input[name="calibration_mode"]:checked').val() == 'spec-input') {
+    $('div.checker-mode').hide();
+    $('div.spectral-mode').hide();
+    $('div.spec-input-mode').show();
   } else {
     $('div.checker-mode').hide();
     $('div.spectral-mode').show();
+    $('div.spec-input-mode').hide();
   }
 }

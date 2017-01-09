@@ -11,6 +11,12 @@ function checkIfReadyForProcessing() {
     upload_files['light_cal_spectrum']  = { filename: null, locked: false, content: null };
     upload_files['light_cal_image']     = upload_files['colorchecker_image'];
     $('input[name="line_cal_spectrum-filename"] input[name="line_cal_image-filename"] input[name="light_cal_spectrum-filename"] input[name="light_cal_image-filename"]').val('Choose File');
+  } else if ( $('input[name="calibration_mode"]:checked').val() == 'spec-input' ) {
+    upload_files['line_cal_image']      = { filename: null, locked: false, content: null };
+    upload_files['line_cal_spectrum']   = { filename: null, locked: false, content: null };
+    upload_files['light_cal_spectrum']  = { filename: null, locked: false, content: null };
+    upload_files['light_cal_image']     = { filename: null, locked: false, content: null };
+    $('input[name="line_cal_spectrum-filename"] input[name="line_cal_image-filename"] input[name="light_cal_spectrum-filename"] input[name="light_cal_image-filename"]').val('Choose File');
   }
 
   $('select.file-selectable').each(function () {
@@ -87,6 +93,7 @@ function createXmlDoc() {
   xmlwriter.writeElementString('LightCalibrationSpectrum', (upload_files['light_cal_spectrum']['filename'] != null ? 'light_cal_spectrum-' + upload_files['light_cal_spectrum']['filename'] : '') );
   xmlwriter.writeElementString('LightCalibrationImage',    (upload_files['light_cal_image']['filename'] != null ? 'light_cal_image-' + upload_files['light_cal_image']['filename'] : '') );
   xmlwriter.writeElementString('CheckerWhitePoint', getFileSelectableValue('checker_white_point'));
+  xmlwriter.writeElementString('SpectrumFile',             (upload_files['spectrum']['filename'] != null ? 'spectrum-' + upload_files['spectrum']['filename'] : '') );
   xmlwriter.writeEndElement();
   xmlwriter.writeEndElement();
 
