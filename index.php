@@ -284,6 +284,8 @@ post proc</textarea>
               <input type="reset" value="Reset Form(!)">
             </p>
 
+            <p><strong style="color: darkred;">For reliability of the file handling using Firefox is recommended.<br/>There  are some known issues with other browsers.</strong></p> 
+
             <p class="dev-mode">
               <input type="button" value="Show XML" onclick="showXml();">
             </p>
