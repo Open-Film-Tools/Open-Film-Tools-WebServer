@@ -17,14 +17,25 @@ function updateStatusMessages(status) {
   var state = "No status information found!";
   var progress_log = [];
 
+  var is_error = false;
+
   switch (status['code']) {
     case "0":
       state = "Your camera profile is in the queue for processing.";
       $('#' + status['guid'] + ' .main-info .guid').css('border-color', '#888');
       break;
     case "100":
-      state = "IDT creation is currently in progress.";
-      $('#' + status['guid'] + ' .main-info .guid').css('border-color', '#ee0');
+      if ('log' in status && status['log'][status['log'].length - 1]['user_message'].includes('error'))
+      {
+        state = "IDT creation failed";
+        $('#' + status['guid'] + ' .main-info .guid').css('border-color', '#f00');
+        is_error = true;
+      }
+      else
+      {
+        state = "IDT creation is currently in progress.";
+        $('#' + status['guid'] + ' .main-info .guid').css('border-color', '#ee0');
+      }
       break;
     case "200":
       state = "The IDT creation is finished.";
@@ -33,7 +44,16 @@ function updateStatusMessages(status) {
       $('#' + status['guid'] + ' .finished-action').show();
       break;
   }
-  $('#' + status['guid'] + ' .main-status').html('<p>' + state + '</p>');
+
+  if (is_error)
+  {
+    $('#' + status['guid'] + ' .main-status').html('<p style="background-color: #fcc;">' + state + '</p>');
+  }
+  else
+  {
+    $('#' + status['guid'] + ' .main-status').html('<p>' + state + '</p>');
+  }
+  
 
   if (status['log']) {
     var i;
