@@ -55,23 +55,25 @@ function generateCTLpreview($guid, $inputctl) {
  */
 function renderPreview($input_file, $output_prefix, $inputctl) {
     $idt = escapeshellcmd($inputctl);
-    $rrt = escapeshellcmd(ACESDEV_PATH . '/transforms/ctl/rrt/RRT.a1.0.0.ctl');
-    $rgb_odt = escapeshellcmd(ACESDEV_PATH . '/transforms/ctl/odt/rgbMonitor/ODT.Academy.RGBmonitor_D60sim_100nits_dim.a1.0.0.ctl');
+    $rrt = escapeshellcmd(ACESDEV_PATH . '/transforms/ctl/rrt/RRT.ctl');
+    $rgb_odt = escapeshellcmd(ACESDEV_PATH . '/transforms/ctl/odt/rgbMonitor/ODT.Academy.RGBmonitor_D60sim_100nits_dim.ctl');
     $input = escapeshellcmd($input_file);
     $lin_output = escapeshellcmd($output_prefix . '-linear');
     $rgb_output = escapeshellcmd($output_prefix . '-rgb');
 
     $return = null;
 
-    $lin_stdout = system(CTLRENDER_PATH . ' -ctl ' . $idt . ' -param1 aIn 1.0 ' . $input . ' ' . $lin_output . '.tif -format tif16', $return);
+    $ctlcmd_1 = CTLRENDER_PATH . ' -ctl ' . $idt . ' -param1 aIn 1.0 ' . $input . ' ' . $lin_output . '.tif -format tif16';
+    $lin_stdout = system($ctlcmd_1, $return);
     if ($return !== 0) {
-        echo CTLRENDER_PATH . ' -ctl ' . $idt . ' -param1 aIn 1.0 ' . $input . ' ' . $lin_output . ' -format tif16' . "\n<br />";
+        echo $ctlcmd_1 . "\n<br />";
         die("something went wrong : $lin_stdout");
     }
 
-    $rgb_stdout = system(CTLRENDER_PATH . ' -ctl ' . $idt . ' -param1 aIn 1.0 -ctl ' . $rrt . ' -ctl ' . $rgb_odt . ' ' . $input . ' ' . $rgb_output . '.tif -format tif16', $return);
+    $ctlcmd_2 = CTLRENDER_PATH . ' -ctl ' . $idt . ' -param1 aIn 1.0 -ctl ' . $rrt . ' -ctl ' . $rgb_odt . ' ' . $input . ' ' . $rgb_output . '.tif -format tif16';
+    $rgb_stdout = system($ctlcmd_2, $return);
     if ($return !== 0) {
-        echo CTLRENDER_PATH . ' -ctl ' . $idt . ' -param1 aIn 1.0 -ctl ' . $rrt . ' -ctl ' . $rgb_odt . ' ' . $input . ' ' . $rgb_output . ' -format tif16' . "\n<br />";
+        echo $ctlcmd_2 . "\n<br />";
         die("something went wrong : $rgb_stdout");
     }
 
