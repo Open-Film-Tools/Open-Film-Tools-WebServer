@@ -80,8 +80,16 @@ function createXmlDoc() {
   xmlwriter.writeElementString('WhitePoint', getFileSelectableValue('white_point'));
   xmlwriter.writeElementString('SceneIllumination', getFileSelectableValue('scene_illumination'));
   xmlwriter.writeElementString('ErrorMinimizationDomain', $("select[name='color_domain']").val());
-  xmlwriter.writeElementString('PatchSet', getFileSelectableValue('patch_set'));
   xmlwriter.writeElementString('CIEStandardObserver', $("input[name='cie_standard_observer']").val());
+
+  xmlwriter.writeStartElement('PatchSets');
+  var patch_set_count = $('.patch-set-selection').length
+  for (i = 0; i < patch_set_count; i++)
+  {
+    xmlwriter.writeElementString('PatchSet', getFileSelectableValue('patch_set_' + i));
+  }
+  xmlwriter.writeEndElement();  
+
   xmlwriter.writeEndElement();
   xmlwriter.writeEndElement();
 

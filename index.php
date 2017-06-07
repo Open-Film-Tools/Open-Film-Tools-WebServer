@@ -86,15 +86,24 @@
               <option disabled class="dev-mode">──────────</option>
               <option value="FILE" class="dev-mode">Upload White Point File ...</option>
             </select> <br>
+
             <label for="color_domain">Color Domain</label> <select name="color_domain">
               <option value="Lab">Lab</option>
               <option value="Luv" class="dev-mode">Luv</option>
             </select> <br>
-            <label for="patch_set">Patch Set</label> <select name="patch_set" class="file-selectable">
+
+            <label for="patch_set_0">Patch Set</label> <select name="patch_set_0" class="file-selectable patch-set-selection">
+              <option value="Gretag Macbeth Color Checker">Gretag Macbeth Color Checker</option>
+              <option disabled class="dev-mode">──────────</option>
+              <option value="FILE" class="dev-mode">Upload Patch Set File ...</option>
+            </select> <button type="button" id="showPatchSet1" class="patch-button">+</button>
+            
+            <label for="patch_set_1" class="patch-set-1">Patch Set 2</label> <select name="patch_set_1" class="file-selectable patch-set-selection patch-set-1">
               <option value="Gretag Macbeth Color Checker">Gretag Macbeth Color Checker</option>
               <option disabled class="dev-mode">──────────</option>
               <option value="FILE" class="dev-mode">Upload Patch Set File ...</option>
             </select> <br>
+
             <label for="scene_illumination">Scene Illumination</label> <select name="scene_illumination" class="file-selectable">
               <option value="D50">Daylight D50</option>
               <option value="D55">Daylight D55</option>

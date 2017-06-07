@@ -34,6 +34,12 @@ $( document ).ready( function() {
     }
   });
 
+  $('.patch-set-1').hide();
+  $('#showPatchSet1').click(function() {
+    $('.patch-set-1').show();
+    $('.patch-button').hide();
+  });
+
   setInterval(updateAllStatusInformation, 15000);
 
   upload_worker = new Worker('js/worker/upload-worker.js');
