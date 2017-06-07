@@ -50,8 +50,8 @@ foreach(scandir(UPLOAD_DIR) as $dir) {
             $zip->addFile($file);
         }
         $zip->addFile($dir . '.status.xml');
-        if ( file_exists('cameraResponse.csv') ) {
-            $zip->addFile('cameraResponse.csv');
+        if ( file_exists($dir . '_cameraResponse.csv') ) {
+            $zip->addFile($dir . 'cameraResponse.csv');
         }
         $zip->close();
 
