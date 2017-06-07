@@ -54,7 +54,7 @@ $guid_list = implode(',', $guid_sort);
         <div class="row" id="header">
           <div class="col-md-12">
             <div id="hdm-logo-container">
-              <img src="../img/hdm_logo.gif" alt="Stuttgart Media University Logo">
+              <img src="../img/hdm_logo.png" alt="Stuttgart Media University Logo" height="92" width="100">
             </div>
             <h2>Open Film Tools IDT Profile Creation</h2>
           </div>
