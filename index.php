@@ -322,7 +322,7 @@ post proc</textarea>
 
         <div class="row" id="footer">
           <div class="col-md-12">
-            Open Film Tools Project &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.hdm-stuttgart.de/">Hochschule der Medien Stuttgart</a>
+            <a href="https://www.hdm-stuttgart.de/open-film-tools/english">Open Film Tools Project</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.hdm-stuttgart.de/">Hochschule der Medien Stuttgart</a>
           </div>
         </div>
 
