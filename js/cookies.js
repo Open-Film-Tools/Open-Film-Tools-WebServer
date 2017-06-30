@@ -12,7 +12,7 @@ function writeFormInformationCookie() {
       white_point:            $("select[name='white_point']").val(),
       scene_illumination:     $("select[name='scene_illumination']").val(),
       color_domain:           $("select[name='color_domain']").val(),
-      patch_set:              $("select[name='patch_set']").val(),
+      patch_set_0:            $("select[name='patch_set_0']").val(),
       linearization:          $("select[name='linearization']").val(),
       sensor_diagonal:        $("input[name='sensor_diagonal']").val(),
       lens_stop:              $("input[name='lens_stop']").val(),
@@ -45,7 +45,7 @@ function readFormInformationCookie() {
     $("select[name='white_point']").val(form_information['white_point']);
     $("select[name='scene_illumination']").val(form_information['scene_illumination']);
     $("select[name='color_domain']").val(form_information['color_domain']);
-    $("select[name='patch_set']").val(form_information['patch_set']);
+    $("select[name='patch_set_0']").val(form_information['patch_set_0']);
     $("select[name='linearization']").val(form_information['linearization']);
     $("input[name='sensor_diagonal']").val(form_information['sensor_diagonal']);
     $("input[name='lens_stop']").val(form_information['lens_stop']);

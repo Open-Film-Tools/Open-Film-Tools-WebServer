@@ -68,7 +68,7 @@
             <label for="time">Time</label> <input name="time" type="text" class="form-control" placeholder="Time" required>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4" id="profile-optimization-column">
             <h3>Profile Optimization</h3>
             <label for="white_point">White Point</label> <select name="white_point" class="file-selectable">
               <option value="D50">Daylight D50</option>
@@ -92,17 +92,15 @@
               <option value="Luv" class="dev-mode">Luv</option>
             </select> <br>
 
-            <label for="patch_set_0">Patch Set</label> <select name="patch_set_0" class="file-selectable patch-set-selection">
+            <label for="patch_set_0">Patch Set</label> <select name="patch_set_0" class="file-selectable patchset-selection patch-set-0">
               <option value="Gretag Macbeth Color Checker">Gretag Macbeth Color Checker</option>
               <option disabled class="dev-mode">──────────</option>
               <option value="FILE" class="dev-mode">Upload Patch Set File ...</option>
-            </select> <button type="button" id="showPatchSet1" class="patch-button">+</button>
-            
-            <label for="patch_set_1" class="patch-set-1">Patch Set 2</label> <select name="patch_set_1" class="file-selectable patch-set-selection patch-set-1">
-              <option value="Gretag Macbeth Color Checker">Gretag Macbeth Color Checker</option>
-              <option disabled class="dev-mode">──────────</option>
-              <option value="FILE" class="dev-mode">Upload Patch Set File ...</option>
-            </select> <br>
+            </select>
+            <span> <input type="checkbox" class="patch-check-sceneillum" name="patch_set_0_scene_illum" value="1"> Under scene illumination</span> <br />
+
+            <br /> <button type="button" id="add-patch-button" class="patch-button">+</button> <br /><br />
+
 
             <label for="scene_illumination">Scene Illumination</label> <select name="scene_illumination" class="file-selectable">
               <option value="D50">Daylight D50</option>

@@ -34,10 +34,23 @@ $( document ).ready( function() {
     }
   });
 
-  $('.patch-set-1').hide();
-  $('#showPatchSet1').click(function() {
-    $('.patch-set-1').show();
-    $('.patch-button').hide();
+
+  $('#add-patch-button').click(function() {
+    var new_patchset_num = $('.patchset-selection').length
+    var add_after_obj = $('.patchset-selection:last').next().next().next();  // skip the file-selectable div, checkbox and one br
+    add_after_obj.after('<br />\
+<label for="patch_set_' + new_patchset_num + '" class="patch-set-' + new_patchset_num + '">Patch Set</label>\
+<select name="patch_set_' + new_patchset_num + '" class="file-selectable patchset-selection patch-set-' + new_patchset_num + '">\
+    <option value="Gretag Macbeth Color Checker">Gretag Macbeth Color Checker</option>\
+    <option disabled class="dev-mode">──────────</option>\
+    <option value="FILE" class="dev-mode">Upload Patch Set File ...</option>\
+</select>\
+<span><input type="checkbox" class="patch-check-sceneillum" name="patch_set_' + new_patchset_num + '_scene_illum" value="1"> Under scene illumination </span> <br /> ');
+
+    makeFileSelectable($('.patchset-selection:last'), 'patch-set-' + new_patchset_num);
+    $('.patchset-selection:last').change( formFieldListener );
+    $( "input[type='file']" ).change( fileChangeListener );
+    loadDetailConfigToForm();
   });
 
   setInterval(updateAllStatusInformation, 15000);

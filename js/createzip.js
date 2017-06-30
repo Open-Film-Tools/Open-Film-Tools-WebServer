@@ -21,7 +21,7 @@ function checkIfReadyForProcessing() {
 
   $('select.file-selectable').each(function () {
     var name = $(this).prop( 'name' );
-    if(this.value == 'FILE') {
+    if(this.value == 'FILE' && $(this).is(':visible')) {
       if (upload_files[name + '_selectable']['content'] == null || upload_files[name + '_selectable']['filename'] == null) {
         alert('Select '+ name + ' file or use a default option!');
         return false;
@@ -83,11 +83,22 @@ function createXmlDoc() {
   xmlwriter.writeElementString('CIEStandardObserver', $("input[name='cie_standard_observer']").val());
 
   xmlwriter.writeStartElement('PatchSets');
-  var patch_set_count = $('.patch-set-selection').length
-  for (i = 0; i < patch_set_count; i++)
-  {
-    xmlwriter.writeElementString('PatchSet', getFileSelectableValue('patch_set_' + i));
-  }
+  var patch_check_sceneillum = $('.patch-check-sceneillum');
+  var patch_set_count = $('.patchset-selection').each( function (index) {
+    if ($(this).is(':visible'))
+    {
+      var elem_name = $(this).prop('name');
+
+      xmlwriter.writeStartElement('PatchSet');
+      if ( $(patch_check_sceneillum[index]).prop( "checked" ) === true )
+      {
+        console.log('Checkbox for ' + elem_name + ' is CHECKED');
+        xmlwriter.writeAttributeString('UseSceneIllumination', '1');
+      }
+      xmlwriter.writeString(getFileSelectableValue(elem_name));
+      xmlwriter.writeEndElement();
+    }
+  } );
   xmlwriter.writeEndElement();  
 
   xmlwriter.writeEndElement();

@@ -15,17 +15,28 @@ var upload_files = {
  */
 function addFileSelectionForSelectables() {
   $('select.file-selectable').each(function () {
-    var name = $(this).prop( 'name' );
-    $(this).after('<br />\
-  <div class="file-container" id="' + name + '-fileselect" style="display: none;">\
-    <div class="file-upload">\
-      <input type="button" value="...">\
-      <input name="' + name + '_selectable" type="file" class="upload" />\
-    </div>\
-    <input name="' + name + '_selectable-filename" type="text" placeholder="Choose File" disabled="disabled" class="form-control file-info-placeholder" />\
-  </div>');
-    upload_files[name + '_selectable'] = { filename: null, locked: false, content: null };
+    var additional_class_info = '';
+    var class_list = $(this).prop('class').split(/\s+/);
+    $.each(class_list, function(index, item) {
+    if (item.indexOf("patch-set-") !== -1) {
+        additional_class_info = item;
+    } } );
+    makeFileSelectable($(this), additional_class_info);
   });
+}
+
+function makeFileSelectable(elem, additional_class_info = '')
+{
+  var name = elem.prop( 'name' );
+  elem.after('<br />\
+<div class="file-container ' + additional_class_info + '" id="' + name + '-fileselect" style="display: none;">\
+  <div class="file-upload">\
+    <input type="button" value="...">\
+    <input name="' + name + '_selectable" type="file" class="upload" />\
+  </div>\
+  <input name="' + name + '_selectable-filename" type="text" placeholder="Choose File" disabled="disabled" class="form-control file-info-placeholder" />\
+</div>');
+  upload_files[name + '_selectable'] = { filename: null, locked: false, content: null };
 }
 
 
