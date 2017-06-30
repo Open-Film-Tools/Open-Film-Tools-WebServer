@@ -61,8 +61,10 @@ $mailer->FromName = 'OpenFilmTools IDT Creation Server';
 
 /*
  * Set environmental variables as ctlrender needs this two variables to find the utilities used by the ACES ctls.
+ *
+ * CTL_MODULE_PATH was traditionally /transforms/ctl/utilities until a renaming by the AMPAS changed the source folder structure
  */
-putenv('CTL_MODULE_PATH=' . ACESDEV_PATH . '/transforms/ctl/utilities');
+putenv('CTL_MODULE_PATH=' . ACESDEV_PATH . '/transforms/ctl/lib'); 
 putenv('DYLD_LIBRARY_PATH');
 
 
