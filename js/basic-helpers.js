@@ -109,3 +109,8 @@ function menuShowStatus() {
   $('div.submission-form-row').hide();
   $('div.status-info-row:not(.no-show)').show();
 }
+
+function doHide(selector)
+{
+  $(selector).hide();
+}

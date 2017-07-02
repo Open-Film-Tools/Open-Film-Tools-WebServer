@@ -28,7 +28,7 @@ function addFileSelectionForSelectables() {
 function makeFileSelectable(elem, additional_class_info = '')
 {
   var name = elem.prop( 'name' );
-  elem.after('<br />\
+  elem.after('<br class="' + additional_class_info + '" />\
 <div class="file-container ' + additional_class_info + '" id="' + name + '-fileselect" style="display: none;">\
   <div class="file-upload">\
     <input type="button" value="...">\

@@ -92,12 +92,12 @@
               <option value="Luv" class="dev-mode">Luv</option>
             </select> <br>
 
-            <label for="patch_set_0">Patch Set</label> <select name="patch_set_0" class="file-selectable patchset-selection patch-set-0">
+            <label for="patch_set_0" class="patch-set-0">Patch Set</label> <select name="patch_set_0" class="file-selectable patchset-selection patch-set-0">
               <option value="Gretag Macbeth Color Checker">Gretag Macbeth Color Checker</option>
               <option disabled class="dev-mode">──────────</option>
               <option value="FILE" class="dev-mode">Upload Patch Set File ...</option>
             </select>
-            <span> <input type="checkbox" class="patch-check-sceneillum" name="patch_set_0_scene_illum" value="1"> Under scene illumination</span> <br />
+            <span class="patch-set-0"> <input type="checkbox" class="patch-check-sceneillum" name="patch_set_0_scene_illum" value="1"> Under scene illumination <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:doHide('.patch-set-0')">[Remove]</a>--> </span> <br class="patch-set-0" />
 
             <br /> <button type="button" id="add-patch-button" class="patch-button">+</button> <br /><br />
 

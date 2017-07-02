@@ -37,15 +37,18 @@ $( document ).ready( function() {
 
   $('#add-patch-button').click(function() {
     var new_patchset_num = $('.patchset-selection').length
-    var add_after_obj = $('.patchset-selection:last').next().next().next();  // skip the file-selectable div, checkbox and one br
-    add_after_obj.after('<br />\
+    var add_after_obj = $('.patchset-selection:last').next().next().next().next();  // skip the file-selectable div, checkbox and one br
+    add_after_obj.after('\
+<br class="patch-set-' + new_patchset_num + '" />\
 <label for="patch_set_' + new_patchset_num + '" class="patch-set-' + new_patchset_num + '">Patch Set</label>\
 <select name="patch_set_' + new_patchset_num + '" class="file-selectable patchset-selection patch-set-' + new_patchset_num + '">\
     <option value="Gretag Macbeth Color Checker">Gretag Macbeth Color Checker</option>\
     <option disabled class="dev-mode">──────────</option>\
     <option value="FILE" class="dev-mode">Upload Patch Set File ...</option>\
 </select>\
-<span><input type="checkbox" class="patch-check-sceneillum" name="patch_set_' + new_patchset_num + '_scene_illum" value="1"> Under scene illumination </span> <br /> ');
+<span class="patch-set-' + new_patchset_num + '"><input type="checkbox" class="patch-check-sceneillum" name="patch_set_' + new_patchset_num + '_scene_illum" value="1"> Under scene illumination\
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:doHide(\'.patch-set-' + new_patchset_num + '\')">[Remove]</a></span>\
+<br class="patch-set-' + new_patchset_num + '" /> ');
 
     makeFileSelectable($('.patchset-selection:last'), 'patch-set-' + new_patchset_num);
     $('.patchset-selection:last').change( formFieldListener );
