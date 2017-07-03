@@ -93,7 +93,11 @@ function createXmlDoc() {
       if ( $(patch_check_sceneillum[index]).prop( "checked" ) === true )
       {
         console.log('Checkbox for ' + elem_name + ' is CHECKED');
-        xmlwriter.writeAttributeString('UseSceneIllumination', '1');
+        xmlwriter.writeAttributeString('Illuminant', getFileSelectableValue('scene_illumination'));
+      }
+      else
+      {
+        xmlwriter.writeAttributeString('Illuminant', 'E');
       }
       xmlwriter.writeString(getFileSelectableValue(elem_name));
       xmlwriter.writeEndElement();
