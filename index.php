@@ -44,6 +44,7 @@
               <img src="img/hdm_logo.png" alt="Stuttgart Media University Logo" height="92" width="100">
             </div>
             <h2>Open Film Tools Camera Profile Creation</h2>
+            <h3 class="subheading">ICC and IDT profile creation</h3>
           </div>
         </div>
 
