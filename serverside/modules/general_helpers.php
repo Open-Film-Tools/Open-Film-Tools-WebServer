@@ -47,7 +47,7 @@ function sendDownloadNotificationMail($guid) {
     $body = <<<PHPMAIL
 Hello {$job_information['operator']},
 
-your IDT generation progress {$guid} (Camera: {$job_information['camera']}, submitted on {$job_information['time']}) was just finished. Download it here:
+your camera profile generation progress {$guid} (Camera: {$job_information['camera']}, submitted on {$job_information['time']}) was just finished. Download it here:
 
 {$download_link}
 
@@ -58,7 +58,7 @@ Kind regards,
 your Open Film Tools Team
 PHPMAIL;
 
-    return sendPHPmailer($job_information['email'], 'IDT Creation Finished - ' . $guid, $body);
+    return sendPHPmailer($job_information['email'], 'Camera Profile Creation Finished - ' . $guid, $body);
 }
 
 

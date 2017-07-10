@@ -23,7 +23,7 @@ $guid_list = implode(',', $guid_sort);
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Task Overview - Open Film Tools IDT Profile Creation</title>
+    <title>Task Overview - Open Film Tools Camera Profile Creation</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,19 +56,19 @@ $guid_list = implode(',', $guid_sort);
             <div id="hdm-logo-container">
               <img src="../img/hdm_logo.png" alt="Stuttgart Media University Logo" height="92" width="100">
             </div>
-            <h2>Open Film Tools IDT Profile Creation</h2>
+            <h2>Open Film Tools Camera Profile Creation</h2>
           </div>
         </div>
 
         <div class="row status-info-row" id="status-info-header-row">
           <div class="col-md-12">
-            <h2>IDT Creation Progress Information</h2>
+            <h2>Camera Profile Creation Progress Information</h2>
           </div>
         </div>
 
         <div class="row status-info-row" id="status-info-placeholder">
           <div class="col-md-12">
-            <p>No job is found. You can see the status of your IDT creation when you submitted a progress.</p>
+            <p>No job is found. You can see the status of your profile creation when you submitted a progress.</p>
           </div>
         </div>
 

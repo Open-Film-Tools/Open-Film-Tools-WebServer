@@ -27,18 +27,18 @@ function updateStatusMessages(status) {
     case "100":
       if ('log' in status && status['log'][status['log'].length - 1]['user_message'].includes('error'))
       {
-        state = "IDT creation failed";
+        state = "Camera profile creation failed";
         $('#' + status['guid'] + ' .main-info .guid').css('border-color', '#f00');
         is_error = true;
       }
       else
       {
-        state = "IDT creation is currently in progress.";
+        state = "Camera profile creation is currently in progress.";
         $('#' + status['guid'] + ' .main-info .guid').css('border-color', '#ee0');
       }
       break;
     case "200":
-      state = "The IDT creation is finished.";
+      state = "The camera profile creation is finished.";
       $('#' + status['guid'] + ' .main-info .guid').css('border-color', '#0f0');
       $('#'+ status['guid']).data('finished', 'yes');
       $('#' + status['guid'] + ' .finished-action').show();
@@ -61,7 +61,7 @@ function updateStatusMessages(status) {
       progress_log.push('<li class="level-'+ status['log'][i]['level'] +'"><span class="log-date">' + status['log'][i]['date'] + '</span> <span class="log-message">' + status['log'][i]['user_message'] + '</span></li>');
     }
 
-    $('#' + status['guid'] + ' .log-messages').html('<p>Log information of IDT creation:</p><ul class="progress-log">'+ progress_log.join("") +'</ul>');
+    $('#' + status['guid'] + ' .log-messages').html('<p>Log information of profile creation:</p><ul class="progress-log">'+ progress_log.join("") +'</ul>');
   }
 }
 
@@ -129,7 +129,7 @@ function addStatusDiv(guid) {
     preview_link = '<input type="button" value="Preview Images" onclick="showPreview(\'' + guid + '\');">';
   }
 
-  $('#status-info-header-row').after('<div class="row status-info-row status-row-with-guid" id="' + guid + '"> <div class="col-md-12 main-info"></div> <div class="col-md-12 additional-info"></div> <div class="col-md-12 main-status"></div> <div class="col-md-12 log-messages"></div> <div class="col-md-12 finished-action" style="display: none;"> <input type="button" value="Download IDT" onclick="downloadIDT(\'' + guid + '\');"> <span style="margin-left:2em;">&nbsp;</span> ' + preview_link + ' </div> </div>');
+  $('#status-info-header-row').after('<div class="row status-info-row status-row-with-guid" id="' + guid + '"> <div class="col-md-12 main-info"></div> <div class="col-md-12 additional-info"></div> <div class="col-md-12 main-status"></div> <div class="col-md-12 log-messages"></div> <div class="col-md-12 finished-action" style="display: none;"> <input type="button" value="Download camera profiles" onclick="downloadIDT(\'' + guid + '\');"> <span style="margin-left:2em;">&nbsp;</span> ' + preview_link + ' </div> </div>');
   toggleDetailedStatus(guid);
   $('#status-info-placeholder').hide();
   $('#status-info-placeholder').addClass('no-show');

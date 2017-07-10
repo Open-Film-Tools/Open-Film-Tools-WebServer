@@ -54,7 +54,7 @@ $mailer->Port = 587;                                    // TCP port to connect t
 */
 
 $mailer->From = 'from@example.com';
-$mailer->FromName = 'OpenFilmTools IDT Creation Server';
+$mailer->FromName = 'OpenFilmTools Camera Profile Creation Server';
 
 //$mailer->WordWrap = 50;                                 // Set word wrap to 50 characters
 

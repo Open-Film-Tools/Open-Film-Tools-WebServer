@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Open Film Tools IDT Profile Creation</title>
+    <title>Open Film Tools Camera Profile Creation</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +43,7 @@
             <div id="hdm-logo-container">
               <img src="img/hdm_logo.png" alt="Stuttgart Media University Logo" height="92" width="100">
             </div>
-            <h2>Open Film Tools IDT Profile Creation</h2>
+            <h2>Open Film Tools Camera Profile Creation</h2>
           </div>
         </div>
 
@@ -217,7 +217,7 @@ post proc</textarea>
               <input name="spectrum-filename" type="text" placeholder="Choose File" disabled="disabled" class="form-control file-info-placeholder" />
             </div>
 
-            <p>Upload previously calculated spectrum file (cameraResponse.csv) and calculate an IDT based on it.</p>
+            <p>Upload previously calculated spectrum file (cameraResponse.csv) and calculate camera profiles based on it.</p>
           </div>
           <div class="col-md-4 spec-input-mode">&nbsp;</div>
 
@@ -270,7 +270,7 @@ post proc</textarea>
           <div class="col-md-4">
             <h3>Test Image</h3>
 
-            <label for="testimage-filename">Demo Image to preview the IDT</label><br />
+            <label for="testimage-filename">Color checker reference image</label><br />
             <div class="file-container">
               <div class="file-upload">
                 <input type="button" value="...">
@@ -308,13 +308,13 @@ post proc</textarea>
 
         <div class="row status-info-row" id="status-info-header-row">
           <div class="col-md-12">
-            <h2>IDT Creation Progress Information</h2>
+            <h2>Camera Profile Creation Progress Information</h2>
           </div>
         </div>
 
         <div class="row status-info-row" id="status-info-placeholder">
           <div class="col-md-12">
-            <p>No job is found. You can see the status of your IDT creation when you submitted a progress.</p>
+            <p>No job is found. You can see the status of your camera profile creation when you submitted a progress.</p>
           </div>
         </div>
 
