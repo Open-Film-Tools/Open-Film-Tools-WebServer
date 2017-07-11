@@ -58,17 +58,16 @@ function renderPreview($input_file, $output_prefix, $inputctl) {
     $rrt = escapeshellcmd(ACESDEV_PATH . '/transforms/ctl/rrt/RRT.ctl');
     $rgb_odt = escapeshellcmd(ACESDEV_PATH . '/transforms/ctl/odt/rgbMonitor/ODT.Academy.RGBmonitor_D60sim_100nits_dim.ctl');
     $input = escapeshellcmd($input_file);
-    $lin_output = escapeshellcmd($output_prefix . '-linear');
     $rgb_output = escapeshellcmd($output_prefix . '-rgb');
 
     $return = null;
 
-    $ctlcmd_1 = CTLRENDER_PATH . ' -ctl ' . $idt . ' -param1 aIn 1.0 ' . $input . ' ' . $lin_output . '.tif -format tif16';
+    /*$ctlcmd_1 = CTLRENDER_PATH . ' -ctl ' . $idt . ' -param1 aIn 1.0 ' . $input . ' ' . $lin_output . '.tif -format tif16';
     $lin_stdout = system($ctlcmd_1, $return);
     if ($return !== 0) {
         echo $ctlcmd_1 . "\n<br />";
         die("something went wrong : $lin_stdout");
-    }
+    }*/
 
     $ctlcmd_2 = CTLRENDER_PATH . ' -ctl ' . $idt . ' -param1 aIn 1.0 -ctl ' . $rrt . ' -ctl ' . $rgb_odt . ' ' . $input . ' ' . $rgb_output . '.tif -format tif16';
     $rgb_stdout = system($ctlcmd_2, $return);
@@ -77,7 +76,7 @@ function renderPreview($input_file, $output_prefix, $inputctl) {
         die("something went wrong : $rgb_stdout");
     }
 
-    system(CONVERT_PATH . ' ' . $lin_output . '.tif -depth 8 -quality 80 ' . $lin_output . '.jpg');
+    //system(CONVERT_PATH . ' ' . $lin_output . '.tif -depth 8 -quality 80 ' . $lin_output . '.jpg');
     system(CONVERT_PATH . ' ' . $rgb_output . '.tif -depth 8 -quality 80 ' . $rgb_output . '.jpg');
 }
 

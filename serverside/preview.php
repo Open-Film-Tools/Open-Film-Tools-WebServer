@@ -18,15 +18,20 @@ if (!$_GET['guid'] || preg_match('/^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([
     die("<h1>No GUID was transfered</h1>");
 }
 
-$file = $_GET['file'];
-if (isset($_GET['file']) && preg_match('/^[a-z_-]+$/', $file) == 1) {
-    $file_path = UPLOAD_DIR . '/' . $guid . '/preview/' . $file . '.jpg';
-    if (!file_exists($file_path)) {
-        die("Download file doesn't exist!");
+
+if (isset($_GET['file']))
+{
+    $file = $_GET['file'];
+    if (preg_match('/^[a-z_-]+$/', $file) == 1) {
+        $file_path = UPLOAD_DIR . '/' . $guid . '/preview/' . $file . '.jpg';
+        if (!file_exists($file_path)) {
+            die("Download file doesn't exist!");
+        }
+        header('Content-Type: image/jpeg');
+        readfile($file_path); exit(0);
     }
-    header('Content-Type: image/jpeg');
-    readfile($file_path); exit(0);
 }
+
 
 ?>
 
@@ -52,21 +57,19 @@ if (isset($_GET['file']) && preg_match('/^[a-z_-]+$/', $file) == 1) {
 
 <?php
 
-$types = ['light_cal' => 'Dedolight Calibration', 'line_cal' => 'Kino Flo Calibration', 'testimage' => 'Test Image'];
+$types = ['testimage' => 'Test Image', 'light_cal' => 'Dedolight Calibration', 'line_cal' => 'Kino Flo Calibration'];
 $image_link_base = SERVER_URL . '/preview.php?guid=' . $guid . '&file=';
 $no_image = true;
 
 foreach($types as $type => $disp_type) {
     $img_output = "";
-    foreach(['Linear', 'RGB'] as $color) {
-        $filename = $type . '-preview_image-' . strtolower($color);
-        if (file_exists(UPLOAD_DIR . '/' . $guid . '/preview/' . $filename . '.jpg')) {
-            $no_image = false;
-            $img_output .= '<div style="float: left; margin-right: 1em;"><img src="' . $image_link_base . $filename . '" width="480px" alt="' . $color . '" /><br /><strong>'.$color.'</strong></div>';
-        }
+    $filename = $type . '-preview_image-rgb';
+    if (file_exists(UPLOAD_DIR . '/' . $guid . '/preview/' . $filename . '.jpg')) {
+        $no_image = false;
+        $img_output .= '<div style="float: left; margin-right: 1em;"><img src="' . $image_link_base . $filename . '" width="650px" alt="sRGB via ACES RRT" /><br /><p>sRGB via ACES RRT</p></div>';
     }
     if (!empty($img_output)) {
-        echo "<h4 style=\"clear: both; padding-top: 1.5em;\">$disp_type</h4><p>$img_output</p>";
+        echo "<h3 style=\"clear: both; padding-top: 1.5em;\">$disp_type</h4><p>$img_output</p>";
     }
 }
 
